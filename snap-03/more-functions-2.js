@@ -4,15 +4,23 @@ const sumPositiveFactors = (number) => {
     let sum = 0;
     let lastFactor = number;
     for(let i = 1; i < number; i++) {
+        //Shortcut to solution (i.e. 12 as example, breaks after 3*4 to avoid adding 4*3 and beyond)
         if(i >= lastFactor) {
             return sum;
         }
+        //Enter block if is a factor
         else if(number % i === 0) {
+            //add small number
             sum += i;
 
-            if(number / i !== i) {
-                sum += number / i;
-                lastFactor = number / i;
+            //calculates largeNumber once, to avoid multiple division functions, maybe technically faster
+            let largeNumber = number / i;
+            //Enter block if other factor isn't identical (i.e. 5*5 for 25, we only want to add 5 once)
+            if(largeNumber !== i) {
+                //add large number
+                sum += largeNumber;
+                //set lastFactor to large number, allows a much shorter loop
+                lastFactor = largeNumber;
             }
         }
     }
