@@ -4,15 +4,21 @@ function removeCompanyIndex(obj) {
     delete obj.company;
 }
 
+//Original Case
 console.log('Printing original before copy/edit: ', originalArray);
 console.log('<--------------------------------------------->');
 
-//Copied array has 10 undefined elements if this code runs.
+//-VERSION 1: Exclusive Separate Function-
+//Copied array has 10 undefined elements if this code runs. Original array is altered.
 //const edittedArray = originalArray.map(removeCompanyIndex);
 
-//Copied array and original array both display with company deleted if this code runs.
-//Start Comment block here to test previous line.
+//-VERSION 2: Fat Arrow Function-
+//Copied array has 10 undefined elements if this code runs. Original array is altered.
+const edittedArray = originalArray.map(person => {delete person.company});
 
+//-VERSION 3: Two steps, simple map one-for-one, forEach for deletion edit-
+//Copied array and original array both display with company deleted if this code runs.
+/*
 const edittedArray = originalArray.map(x => x);
 
 console.log('Printing original after copy: ', originalArray);
@@ -21,9 +27,9 @@ console.log('Printing edit after copy: ', edittedArray);
 console.log('<--------------------------------------------->');
 
 edittedArray.forEach(removeCompanyIndex);
+*/
 
-//End Comment block here.
-
+//Results
 console.log('Printing original after edit: ', originalArray);
 console.log('<--------------------------------------------->');
 console.log('Printing edit: ', edittedArray);
