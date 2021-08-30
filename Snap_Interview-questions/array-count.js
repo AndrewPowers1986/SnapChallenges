@@ -12,7 +12,7 @@ function arrayCount(targetArray) {
     return totals;
 }
 
-//checks if a number is in an array, returns its index
+//checks if a number is in an array
 function contains(array, number) {
     for(let i = 0; i < array.length; i++) {
         if(array[i].number === number) {
@@ -21,3 +21,17 @@ function contains(array, number) {
     }
     return -1;
 }
+
+function printArray(array) {
+    array.forEach(obj => {
+        console.log("Number: " + obj.number + ", Count: " + obj.count);
+    })
+}
+
+const sampleArray = [1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,4,5,6,7,8,9,0,1,2,3,5,6,7,9,0,6,6,6,6];
+
+const totalsArray = arrayCount(sampleArray);
+
+//prints array of objects
+
+printArray(totalsArray);

@@ -16,3 +16,9 @@ function fizz-buzz(intStart, intEnd) {
         }
     }
 }
+
+function fizzbuzz_ternary(intStart, intEnd) {
+    for(let i = intStart; i <= intEnd; i++) {
+        console.log((!(i%2) ? (!(i%3) ? "baz" : "fizz") : (!(i%3) ? "buzz" : i)));
+    }
+}
