@@ -1,0 +1,25 @@
+function arrayCount(targetArray) {
+    let totals = [];
+    for(let i = 0; i < targetArray.length; i++) {
+        let index = contains(totals, targetArray[i]
+        //Checks if number doesnt exist in totals array, if so adds object with number and count
+        if(index === false) {
+            totals.push({
+                number: targetArray[i],
+                count: 1
+            });
+        } else {
+            totals[index].count++;
+        }
+    }
+}
+
+//checks if a number is in an array
+function contains(array, number) {
+    for(let i = 0; i < array.length; i++) {
+        if(array[i] === number) {
+            return i;
+        }
+    }
+    return false;
+}

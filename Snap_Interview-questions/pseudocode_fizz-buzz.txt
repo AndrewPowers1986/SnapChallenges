@@ -1,0 +1,18 @@
+function fizz-buzz(intStart, intEnd) {
+    for(let i = intStart; i <= intEnd; i++) {
+        //Check if number is divisible by 2
+        if(i % 2 === 0) {
+            //Check if number is divisible by both 2 and 3 for "baz", otherwise just 2 for "fizz"
+            if(i % 3 === 0) {
+                console.log("baz");
+            } else {
+                console.log("fizz");
+            }
+            //Number is not even, check if divisible by 3 for "buzz", else just output the number
+        } else if(i % 3 === 0) {
+            console.log("buzz");
+        } else {
+            console.log(i);
+        }
+    }
+}
